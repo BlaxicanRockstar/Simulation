@@ -1,0 +1,11 @@
+Activity Flow
+1.	Body factory creates body part and deposit into body bin
+2.	Body and paint server takes 1 unit from body bin and holds self for time.
+3.	Body and paint server produces and deposit 1 unit into assembled body bin
+4.	Transmission factory creates transmission and deposit into transmission bin
+5.	Engine factory creates engine and deposit into engine bin 
+6.	T&E Server takes 1 unit from each, assembled body bin, transmission bin, and engine bin 
+7.	T&E Server holds self and deposit 1 unit into assembled car bin
+8.	Testing Server takes 1 unit from assembled car bin and hold self
+9.	Testing Server deposit 1 unit into Tested bin
+10.	Shipping Server takes 5 units from Tested bin and hold self
