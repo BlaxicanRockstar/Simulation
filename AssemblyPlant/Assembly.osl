@@ -1,0 +1,46 @@
+//main class 
+
+use all  java.io
+use java.text.DecimalFormat
+use all psimjava
+
+public class Assembly as process is
+	public
+	constants
+		define static bodyParts = 12 of type integer
+		define static engines = 0 of type integer
+		define static transm = 0 of type integer	
+	object references
+		//detachable resources
+		define static bodyRes of class Bin
+		define static engineRes of class Bin
+		define static transRes of class Bin
+		//simulation object reference
+		define static sim of class Simulation
+		//other simulation files
+		define static bodyFact of class BodyFactory
+		define static engineFact of class EngineFactory
+		define static transFact of class TransmissionFactory
+		//files for reporting
+		define static statf of class PrintWriter
+		define static tracef of class PrintWriter
+	function main is
+	begin
+		//create simulation
+		create sim of class Simulation using "Assembly Plant"
+		//create detachable resources
+		create bodyRes of class Bin using "Body Parts", bodyParts
+		create engineRes of class Bin using "Engines", engines
+		create transRes of class Bin using "Transmissions", transm
+		//create class objects
+		create bodyFact of class BodyFactory
+		create engineFact of class EngineFactory
+		create transFact of class TransmissionFactory
+		//create reporting files
+		trace file "atrace.txt"
+		statistics file "astat.txt"
+		//create and start main active object
+		create assembly of class Assembly using "Assembly Plant"
+		start object assembly
+	endfun main
+endclass Assembly
