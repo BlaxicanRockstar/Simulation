@@ -13,6 +13,9 @@ public class Assembly as process is
 		define static bodyRes of class Bin
 		define static engineRes of class Bin
 		define static transRes of class Bin
+		define static assembledBody of class Bin
+		define static assembledCar of class Bin
+		define static testedCar of class Bin
 		//simulation object reference
 		define static sim of class Simulation
 		//other simulation files
@@ -30,6 +33,9 @@ public class Assembly as process is
 		create bodyRes of class Bin using "Body Parts", bodyParts
 		create engineRes of class Bin using "Engines", engines
 		create transRes of class Bin using "Transmissions", transm
+		create assembledBody of class Bin using "Assembled Body", 0
+		create assembledCar of class Bin using "Assembled Car", 0
+		create testedCar of class Bin using "Tested Car", 0
 		//create class objects
 		create bodyFact of class BodyFactory
 		create engineFact of class EngineFactory
