@@ -1,4 +1,6 @@
 Activity Flow
+_____________________________________________________________
+
 1.	Body factory creates body part and deposit into body bin
 2.	Body and paint server takes 1 unit from body bin and holds self for time.
 3.	Body and paint server produces and deposit 1 unit into assembled body bin
@@ -9,3 +11,38 @@ Activity Flow
 8.	Testing Server takes 1 unit from assembled car bin and hold self
 9.	Testing Server deposit 1 unit into Tested bin
 10.	Shipping Server takes 5 units from Tested bin and hold self
+
+
+General Form of factories (body, engine, transmission)
+_________________________________________________________
+
+While simclock < Simulation Time
+Hold self for time (set up random generator by stats in pdf)
+Give 1 unit to appropriated bin (Assembly.bodyParts)
+Display time when unit is given, must be in trace and can also display while program running
+Accumulate parts created for each type
+
+
+General Form of Stations (B&P, T&E, Test)
+__________________________________________
+
+While simclock < Simulation Time
+Take one unit from appropriated bin
+Display time when unit is taken	
+If unit are not available accumulate wait time 
+Hold self for time
+Give 1 unit to the next bin 
+Display time unit is given to bin
+Accumulate parts created for each type
+
+
+General Form of Shipping station
+__________________________________
+
+While simclock< Simulation Time
+Take 5 units from Assembly.testedCar
+Display when 5 units are taken (ex. message: Truck loaded at simclock)
+If 5 units are not available accumulate wait time 
+Hold self for time
+Display message for completed shipping
+Accumulate number of shipped cars
