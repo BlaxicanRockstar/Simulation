@@ -30,9 +30,9 @@ public class Assembly as process is
 		//create simulation
 		create sim of class Simulation using "Assembly Plant"
 		//create detachable resources
-		create bodyRes of class Bin using "Body Parts", bodyParts
-		create engineRes of class Bin using "Engines", engines
-		create transRes of class Bin using "Transmissions", transm
+		create bodyRes of class Bin using "Body Parts", 12
+		create engineRes of class Bin using "Engines", 0
+		create transRes of class Bin using "Transmissions", 0
 		create assembledBody of class Bin using "Assembled Body", 0
 		create assembledCar of class Bin using "Assembled Car", 0
 		create testedCar of class Bin using "Tested Car", 0
